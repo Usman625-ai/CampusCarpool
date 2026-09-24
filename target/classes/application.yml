@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: campus-carpool-api
+  datasource:
+    url: ${DB_URL:jdbc:sqlserver://DESKTOP-0EDMLBD:1433;databaseName=CampusCarpool;encrypt=true;trustServerCertificate=true}
+    username: ${DB_USER:StudentLogin}
+    password: ${DB_PASSWORD:dbmscarpool_app}          # required - no default on purpose
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+app:
+  jwt:
+    # HS256 needs >= 32 bytes. The default is for local development only - set JWT_SECRET anywhere else.
+    secret: ${JWT_SECRET:dev-only-secret-change-me-please-32-bytes-min}
+    ttl-minutes: 480
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173}
+  # Dev convenience: gives the seeded sample users the password Demo@1234
+  seed-demo-passwords: ${SEED_DEMO_PASSWORDS:false}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

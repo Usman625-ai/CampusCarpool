@@ -1,0 +1,32 @@
+# ===== Secrets — never commit these =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ===== Backend (Maven / Java) =====
+backend/target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+*.log
+hs_err_pid*
+
+# IDE (IntelliJ)
+.idea/
+*.iml
+*.iws
+out/
+
+# IDE (VS Code)
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# ===== Local database exports (optional, if you dump data while testing) =====
+*.bak
+*.mdf
+*.ldf
